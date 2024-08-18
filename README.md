@@ -1,2 +1,2 @@
 # CodecademyRepo
-Repo for python projects
+# Repo for python projects from Codecademy
