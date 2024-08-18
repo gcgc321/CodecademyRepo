@@ -36,7 +36,7 @@ def add_attraction(destination, attraction):
   return attractions
 
 
-  
+#attactions list
 add_attraction("Los Angeles, USA", ["Venice Beach", ["beach"]])
 add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
 add_attraction("Paris, France", ["Arc de Triomphe", ["historical site", "monument"]])
@@ -50,6 +50,26 @@ add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical sit
 add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
 
 
+#Lets find the best places to go for our travelers
+def find_attractions(destination, interests):
+  destination_index = get_destination_index(destination)
+  attractions_in_city = attractions[destination_index]
+  attractions_with_interest = []
+
+#access the index and save to variable for next part 
+  for possible_attraction in attractions_in_city:
+    attraction_tags = possible_attraction[1]
+
+#loop through lists to find interests that are same 
+    for interest in interests:
+      if interest in attraction_tags:
+        attractions_with_interest.append(possible_attraction[0])
+        break
+          
+  return attractions_with_interest
+
+la_arts = find_attractions("Los Angeles, USA", ["art"])  
+
+print(la_arts)
 
 
-print(attractions)
